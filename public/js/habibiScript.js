@@ -1,5 +1,9 @@
+import * as VKconnect from './services/VK'
+
 document.addEventListener('DOMContentLoaded', function() {
-  // Do after the document fully loaded
+  // NB: Тут по сути будем производить все махинации с VK
+  // NB: Будем получать токен юзера и авторизовывать/аутентифицировать его
+  // NB: Тут же будем подтягивать инфу о первых 5/N друзьях и отображать в таблице рекордов
 });
 
 
