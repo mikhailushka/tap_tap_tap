@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Tap Tap Tap - Open source tapping game built with Javascript</title>
+	<title>Tap Tap Tap - Каждый Tap Имеет Значение</title>
 	<meta name="description" content="Open source tapping game built with Javascript"/>
 	<link href="style.css" rel="stylesheet">
 	<meta charset="UTF-8">
@@ -42,38 +42,38 @@
 <body ontouchstart="">
 
 	<div class="admin-cp">
-		<button class="admin-cp-button" type="button" name="button">Hide / Show Panel</button>
+		<button class="admin-cp-button" type="button" name="button">Скрыть / Показать Панель</button>
 		<div class="admin-cp-items hidden">
 			<label class="vzbltyLabel" for="splashPageToggle">
-				<input type="radio" name="pT" class="toggleCheckbox" id="splashPageToggle">Splash Page
+				<input type="radio" name="pT" class="toggleCheckbox" id="splashPageToggle">Страница загрузки
 			</label>
 			<label class="vzbltyLabel" for="gameMenuPageToggle">
-				<input type="radio" name="pT" class="toggleCheckbox" id="gameMenuPageToggle" checked="checked">Game Menu Page
+				<input type="radio" name="pT" class="toggleCheckbox" id="gameMenuPageToggle" checked="checked">Страница меню игры
 			</label>
 			<label class="vzbltyLabel" for="aboutPageToggle">
-				<input type="radio" name="pT" class="toggleCheckbox" id="aboutPageToggle">About Page
-			</label>
-			<label class="vzbltyLabel" for="highScorePageToggle">
-				<input type="radio" name="pT" class="toggleCheckbox" id="highScorePageToggle">High Score Page
+				<input type="radio" name="pT" class="toggleCheckbox" id="aboutPageToggle">Страница инфомарции
 			</label>
 			<label class="vzbltyLabel" for="tutorialPageToggle">
-				<input type="radio" name="pT" class="toggleCheckbox" id="tutorialPageToggle">Tutorial Page
+				<input type="radio" name="pT" class="toggleCheckbox" id="tutorialPageToggle">Страница обучения
 			</label>
 			<label class="vzbltyLabel" for="playDelayPageToggle">
-				<input type="radio" name="pT" class="toggleCheckbox" id="playDelayPageToggle">PLay Delay Page
+				<input type="radio" name="pT" class="toggleCheckbox" id="playDelayPageToggle">Страница задержки
 			</label>
 
 			<label class="vzbltyLabel" for="playAreaPageToggle">
-				<input type="radio" name="pT" class="toggleCheckbox" id="playAreaPageToggle">PLay Area Page
+				<input type="radio" name="pT" class="toggleCheckbox" id="playAreaPageToggle">Страница игрового поля
 			</label>
 			<label class="vzbltyLabel" for="pauseMenuPageToggle">
-				<input type="radio" name="pT" class="toggleCheckbox" id="pauseMenuPageToggle">Pause Menu Page
+				<input type="radio" name="pT" class="toggleCheckbox" id="pauseMenuPageToggle">Страница меню паузы
 			</label>
 			<label class="vzbltyLabel" for="youLostPageToggle">
-				<input type="radio" name="pT" class="toggleCheckbox" id="youLostPageToggle">You Lost Page
+				<input type="radio" name="pT" class="toggleCheckbox" id="youLostPageToggle">Страница проигрыша
 			</label>
 			<label class="vzbltyLabel" for="levelPassedPageToggle">
-				<input type="radio" name="pT" class="toggleCheckbox" id="levelPassedPageToggle">Level Passed Page
+				<input type="radio" name="pT" class="toggleCheckbox" id="levelPassedPageToggle">Страница прохождения
+			</label>
+			<label class="vzbltyLabel" for="scoreTablePageToggle">
+				<input type="radio" name="pT" class="toggleCheckbox" id="scoreTablePageToggle">Страница таблицы рекордов
 			</label>
 		</div>
 	</div>
@@ -85,7 +85,7 @@
 			<div class="fixed-75w-wrapper">
 				<div id="splashScreenLogo" class="tpbl-circle c-white splash-screen-logo"></div>
 				<div id="splashScreenTxt">
-					Loading AWESOME STUFF
+					Загрузка
 				</div>
 			</div>
 		</div>
@@ -96,11 +96,11 @@
 				<div class="gm-menu-header-cont">
 					<div class="tpbl-circle c-blue gm-menu-logo-bg"></div>
 					<h1 class="gm-menu-title">Tap Tap Tap</h1>
-					<h2 class="gm-menu-subtitle">Every Tap Matters</h2>
+					<h2 class="gm-menu-subtitle">Каждый Tap Имеет Значение</h2>
 				</div>
-				<button id="newGameBtn" class="gm-btn btn-blue" type="button" name="button">New Game</button>
-				<!-- <button id="highScoresBtn" class="gm-btn" type="button" name="button">Best Score</button> -->
-				<button id="aboutBtn" class="gm-btn" type="button" name="button">About</button>
+				<button id="newGameBtn" class="gm-btn btn-blue" type="button" name="button">Новая Игра</button>
+				<button id="scoresTableButton" class="gm-btn" type="button" name="button">Таблица рекордов</button>
+				<button id="aboutBtn" class="gm-btn" type="button" name="button">Информация</button>
 			</div>
 		</div>
 
@@ -108,16 +108,17 @@
 		<div id="pageAbout" class="page-cont page-about page-faded-bg anmtd-grdnt-bg blu-grdnt-bg no-bg">
 			<div class="fixed-75w-wrapper">
 				<div class="info-screen-title-cont">
-					<div class="info-screen-ttl-txt-bld">About</div>
+					<div class="info-screen-ttl-txt-bld">Информация</div>
 				</div>
 				<div class="info-screen-txt-cont">
-					<div>Created by</div>
-					<a href="http://mahdif.com/" class="txt-bold">Mahdi Farra</a>
+					<div>Разработчики:</div>
+					<a class="txt-bold">Mikhailushka & kirillvlom</a>
 					<hr>
-					<div>Credits</div>
+					<div>Дань уважения:</div>
 					<div class="credits-cont">
 						<ul class="credits-list">
-							<li>Nour Abu Saud</li>
+							<li>Mahdi Farra</li>
+							<li>Nour Abu Saud</lili>
 							<li>Ahmed El Gabri</li>
 							<li>Gustavo Siqueira</li>
 							<li>Eduardo Abreu</li>
@@ -136,17 +137,36 @@
 			<div class="fixed-75w-wrapper">
 				<div class="info-screen-title-cont">
 					<div class="info-screen-icon you-lost-icon"></div>
-					<div class="info-screen-ttl-txt-bld">Game Over</div>
-					<div >You Lost</div>
+					<div class="info-screen-ttl-txt-bld">Игра окончена</div>
+					<div >Вы проиграли</div>
 				</div>
 				<div class="info-screen-txt-cont">
-					<div class="info-screen-body-txt-reg">Score</div>
+					<div class="info-screen-body-txt-reg">Счет</div>
 					<div id="lvlLostNewHighScore" class="lvl-fnshd-score-nmb">86</div>
-					<div class="info-screen-body-txt-reg">New High Score</div>
+					<div class="info-screen-body-txt-reg">Новый рекорд</div>
 					<div class="lvl-fnshd-highscore-icon"></div>
 				</div>
-				<div class="sbmt-tryagain-txt">Try again?</div>
+				<div class="sbmt-tryagain-txt">Еще раз?</div>
 				<div class="tpbl-circle c-white submit-circle"></div>
+			</div>
+		</div>
+
+		<!-- SCORES TABLE PAGE -->
+		<div id="pageScoresTable" class="page-cont page-high-score page-faded-bg anmtd-grdnt-bg rd-grdnt-bg no-bg">
+			<div class="fixed-75w-wrapper">
+				<div class="info-screen-title-cont">
+					<div class="info-screen-ttl-txt-bld">Таблица рекордов</div>
+					<div >Ваш личный рекорд: 123</div>
+				</div>
+				<div class="info-screen-txt-cont">
+					<div class="lvl-fnshd-score-nmb">Друг 1: 123</div>
+					<div class="lvl-fnshd-score-nmb">Друг 2: 123</div>
+					<div class="lvl-fnshd-score-nmb">Друг 3: 123</div>
+					<div class="lvl-fnshd-score-nmb">Друг 4: 123</div>
+					<div class="lvl-fnshd-score-nmb">Друг 5: 123</div>
+					<div class="lvl-fnshd-highscore-icon"></div>
+				</div>
+				<div id="scrPageBackBtn" class="tpbl-circle c-white submit-circle"></div>
 			</div>
 		</div>
 
@@ -155,7 +175,7 @@
 			<div class="fixed-100w-wrapper">
 				<div id="tutPgStartGameBtn" class="tpbl-circle c-blue tut-circle"></div>
 				<div class="tut-arrow"></div>
-				<h2 class="tut-text">TAP THE CIRCLE<br/>TO START</h2>
+				<h2 class="tut-text">TAP по кругу<br/>что бы начать</h2>
 			</div>
 		</div>
 
@@ -184,14 +204,14 @@
 					<!-- score -->
 					<div class="gm-stats-vcont">
 						<div class="stat-wrapper">
-							<div class="gm-stats-title">Score</div>
+							<div class="gm-stats-title">Счет</div>
 							<div id="gmStatsScore" class="gm-stats-value">2894</div>
 						</div>
 					</div>
 					<!-- level number -->
 					<div class="gm-stats-vcont">
 						<div class="stat-wrapper text-align-right">
-							<div id="gmStatsLvlNumb" class="gm-stats-title">Level 7</div>
+							<div id="gmStatsLvlNumb" class="gm-stats-title">Уровень 7</div>
 							<div class="gm-stats-value">
 								<span id="gmStatsCurrentTapCount" class="gm-stats-tap-count">16</span>
 								<span id="gmStatsTotalTapCount">/20</span>
@@ -213,15 +233,15 @@
 			<div class="fixed-75w-wrapper">
 				<div class="info-screen-title-cont">
 					<div class="info-screen-icon puz-icon"></div>
-					<div class="info-screen-ttl-txt-bld">GAME PAUSED</div>
+					<div class="info-screen-ttl-txt-bld">Пауза</div>
 				</div>
 				<div class="info-screen-txt-cont">
-					<div class="info-screen-body-txt-reg">Score</div>
+					<div class="info-screen-body-txt-reg">Счет</div>
 					<div id="lvlPausedScore" class="lvl-fnshd-score-nmb">521</div>
 				</div>
 				<div class="puz-menu-btnz-cont">
-					<button id="pmCntnuGmBtn" class="gm-btn btn-blue">Continue</button>
-					<button id="pmRstrtLvlBtn" class="gm-btn pm-rstrt-lvl-btn">Restart</button>
+					<button id="pmCntnuGmBtn" class="gm-btn btn-blue">Продолжить</button>
+					<button id="pmRstrtLvlBtn" class="gm-btn pm-rstrt-lvl-btn">Заново</button>
 				</div>
 			</div>
 		</div>
@@ -231,16 +251,16 @@
 			<div class="fixed-75w-wrapper">
 				<div class="info-screen-title-cont">
 					<div id="lvlLostIcon" class="info-screen-icon you-lost-icon"></div>
-					<div class="info-screen-ttl-txt-bld">Game Over</div>
-					<div id="lvlLostTtl" >You Lost</div>
+					<div class="info-screen-ttl-txt-bld">Игра окончена</div>
+					<div id="lvlLostTtl" >Вы проиграли</div>
 				</div>
 				<div class="info-screen-txt-cont">
-					<div class="info-screen-body-txt-reg">Score</div>
+					<div class="info-screen-body-txt-reg">Счет</div>
 					<div id="lvlLostScore" class="lvl-fnshd-score-nmb">746</div>
 					<!-- <div class="info-screen-body-txt-reg">Best Score</div>
 					<div id="lvlLostBestScore" class="lvl-fnshd-score-nmb">146</div> -->
 				</div>
-				<div class="sbmt-tryagain-txt">Try again?</div>
+				<div class="sbmt-tryagain-txt">Еще раз?</div>
 				<div id="lvlLostTryAgainBtn" class="tpbl-circle c-white submit-circle"></div>
 			</div>
 		</div>
@@ -250,11 +270,11 @@
 			<div class="fixed-75w-wrapper">
 				<div class="info-screen-title-cont">
 					<div class="info-screen-icon flag-icon"></div>
-					<div id="lvlPssdTtl">Level 2</div>
-					<div class="info-screen-ttl-txt-bld">Passed</div>
+					<div id="lvlPssdTtl">Уровень 2</div>
+					<div class="info-screen-ttl-txt-bld">Пройден</div>
 				</div>
 				<div class="info-screen-txt-cont">
-					<div class="info-screen-body-txt-reg">Score</div>
+					<div class="info-screen-body-txt-reg">Счет</div>
 					<div id="lvlPssdScore" class="lvl-fnshd-score-nmb">521</div>
 					<div id="lvlPssdBonusScore" class="grow-animation"></div>
 				</div>

@@ -595,7 +595,7 @@ hr {
   border-radius: 4px;
   text-align: left;
 
-  display: none;
+  /* display: none; */
 }
 .admin-cp h4 {
   margin: 0 0 20px 0;

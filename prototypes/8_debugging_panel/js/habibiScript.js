@@ -42,6 +42,7 @@ var pageLevelPassed = document.getElementById('pageLevelPassed');
 var pageTimesUp = document.getElementById('pageTimesUp');
 var pageYouLost = document.getElementById('pageYouLost');
 var pageHighScore = document.getElementById('pageHighScore');
+var pageScoresTable = document.getElementById('pageScoresTable');
 
 
 // hide & show pages function
@@ -62,17 +63,17 @@ var levelPassedPageToggle = document.getElementById('levelPassedPage-toggle');
 var timesUpPageToggle = document.getElementById('timesUpPage-toggle');
 var youLostPageToggle = document.getElementById('youLostPage-toggle');
 var highScorePageToggle = document.getElementById('highScorePage-toggle');
+var highScorePageToggle = document.getElementById('highScorePageToggle')
 
 var pagesTogglesArray = [
   playAreaPageToggle, gameMenuPageToggle, tutorialPageToggle,
   levelInfoPageToggle, pauseMenuPageToggle, levelPassedPageToggle,
-  timesUpPageToggle, youLostPageToggle,
-  highScorePageToggle
+  timesUpPageToggle, youLostPageToggle, highScorePageToggle
 ]
 var pagesArray = [
   pagePlayArea, pageGameMenu, pageTutorial,
   pageLevelInfo, pagePauseMenu, pageLevelPassed,
-  pageTimesUp, pageYouLost, pageHighScore
+  pageTimesUp, pageYouLost, pageScoresTable, pageHighScore
 ]
 
 // show/hide pages if the checkbox is checked

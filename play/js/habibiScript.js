@@ -14,6 +14,10 @@ adminCPBtn.addEventListener('click', function(){ adminCPItems.classList.toggle('
 
 // ---------------------- Pages ---------------------- //
 
+// Scores Table Page
+var pageScoresTable = document.querySelector('#pageScoresTable');
+// --
+
 // Splash Page
 var pageSplash = document.querySelector('#pageSplash');
 // --
@@ -44,6 +48,7 @@ var pageGameMenu = document.querySelector('#pageGameMenu');
 // --
 var newGameBtn = document.querySelector('#newGameBtn');
 var highScoresBtn = document.querySelector('#highScoresBtn');
+var scoresTableButton = document.querySelector('#scoresTableButton');
 var aboutBtn = document.querySelector('#aboutBtn');
 
 // Tutorial Page
@@ -91,6 +96,12 @@ var pageAbout = document.querySelector('#pageAbout');
 var abtPageBackBtn = document.querySelector('#abtPageBackBtn');
 
 
+// Scores TAble Page
+var pageScoresTable = document.querySelector('#pageScoresTable');
+// --
+var scrPageBackBtn = document.querySelector('#scrPageBackBtn');
+
+
 // ------- Show Hide Pages Control Panel ------- //
 var playDelayPageToggle = document.getElementById('playDelayPageToggle');
 var playAreaPageToggle = document.getElementById('playAreaPageToggle');
@@ -102,16 +113,17 @@ var youLostPageToggle = document.getElementById('youLostPageToggle');
 var highScorePageToggle = document.getElementById('highScorePageToggle');
 var aboutPageToggle = document.getElementById('aboutPageToggle');
 var splashPageToggle = document.getElementById('splashPageToggle');
+var scoreTablePageToggle = document.getElementById('scoreTablePageToggle');
 
 var pagesTogglesArray = [
-  playAreaPageToggle, gameMenuPageToggle, tutorialPageToggle, playDelayPageToggle,
+  splashPageToggle, playAreaPageToggle, gameMenuPageToggle, tutorialPageToggle, playDelayPageToggle,
   pauseMenuPageToggle, levelPassedPageToggle,
-  youLostPageToggle, highScorePageToggle, aboutPageToggle, splashPageToggle
+  youLostPageToggle, aboutPageToggle, scoreTablePageToggle
 ]
 var pagesArray = [
-  pagePlayArea, pageGameMenu, pageTutorial, pagePlayDelay,
+  pageSplash, pagePlayArea, pageGameMenu, pageTutorial, pagePlayDelay,
   pagePauseMenu, pageLevelPassed,
-  pageYouLost, pageHighScore, pageAbout, pageSplash
+  pageYouLost, pageAbout, pageScoresTable, 
 ]
 
 // show/hide pages if the checkbox is checked
@@ -382,7 +394,7 @@ var gameEngine = {
   },
   updateLevel: function(levelNum) { // Update the level number in the game space and add to engine
     gameEngine.levelNum = levelNum;
-    gmStatsLvlNumb.innerHTML = "Level " + gameEngine.levelNum;
+    gmStatsLvlNumb.innerHTML = "Уровень " + gameEngine.levelNum;
   },
   updateTapCount: function(tapNum, tapsGoal) { // Update tabs count in the game space & add to engine
     gameEngine.tapNum = tapNum;
@@ -479,8 +491,8 @@ var gameEngine = {
 
   },
   deadlyTap: function() { // tapping a red circle
-    console.log('You lost! 🐜');
-    lvlLostTtl.innerHTML = "You Lost";
+    console.log('Вы проиграли! 🐜');
+    lvlLostTtl.innerHTML = "Вы проиграли";
     if (lvlLostIcon.classList.contains('times-up-icon')) {
       lvlLostIcon.classList.remove('times-up-icon');
       lvlLostIcon.classList.add('you-lost-icon');
@@ -488,8 +500,8 @@ var gameEngine = {
     gameEngine.gameLost();
   },
   timesUp: function() {
-    console.log('time is up! ⏱');
-    lvlLostTtl.innerHTML = "Time's Up";
+    console.log('время вышло! ⏱');
+    lvlLostTtl.innerHTML = "Время вышло";
     if (lvlLostIcon.classList.contains('you-lost-icon')) {
       lvlLostIcon.classList.remove('you-lost-icon');
       lvlLostIcon.classList.add('times-up-icon');
@@ -497,12 +509,12 @@ var gameEngine = {
     gameEngine.gameLost();
   },
   levelPassed: function() {
-    console.log('Level passed! 💃');
+    console.log('Уровень пройден! 💃');
     audioPool.playSound(levelPassed);
     timeEngine.stop(); // stop the count down
 
     // update level passed page info
-    lvlPssdTtl.innerHTML = "Level " + gameEngine.levelNum;
+    lvlPssdTtl.innerHTML = "Уровень " + gameEngine.levelNum;
     if (gameEngine.bonusScore > 0) { // if there is a bonus, display score without bonus
       lvlPssdScore.innerHTML = gameEngine.score - gameEngine.bonusScore;
     } else {
@@ -532,7 +544,7 @@ var gameEngine = {
     + " seconds before the time!" );
     gameEngine.updateBonusScore(Math.round(timeEngine.timeLeft, 10) * 10);
     if (gameEngine.bonusScore > 0) { // if theere is some bonus score show it on level passed page
-      lvlPssdBonusScore.innerHTML = "Bonus +" + gameEngine.bonusScore;
+      lvlPssdBonusScore.innerHTML = "Бонус + " + gameEngine.bonusScore;
     }
     gameEngine.score += gameEngine.bonusScore; // add the bonus score to the game score
   }
@@ -731,8 +743,19 @@ aboutBtn.addEventListener('click', function() {
   toolsBox.hidePage(pageGameMenu);
   toolsBox.pageAbout.moveCredits(); // animate the credits in the about page
 }, false);
-
-
+// -- Scores table button
+scoresTableButton.addEventListener('click', function() {
+  audioPool.playSound(buttonTap);
+  toolsBox.showPage(pageScoresTable);
+  toolsBox.hidePage(pageGameMenu);
+}, false);
+// -- Back Button
+scrPageBackBtn.addEventListener('click', function() {
+  audioPool.playSound(buttonTap);
+  toolsBox.showPage(pageGameMenu);
+  toolsBox.hidePage(pageScoresTable);
+  toolsBox.pageAbout.stopMovingCredits(); // stop animating the credits in the about page
+}, false);
 
 
 // Hide Splash Screen when everything is loaded
