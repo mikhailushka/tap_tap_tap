@@ -1,30 +1,23 @@
-import VKConnectOld from "@vkontakte/vk-connect";
-import VKConnect from "@vkontakte/vkui-connect-promise";
+import connect from '../vk-connect/dist/index.es.js';
 
-const APP_ID = 7288820;
-const API_VERSION = '5.92';
+export const APP_ID = 7324963;
+export const API_VERSION = '5.92';
 
 // NB: Где то тут можно разместить функции для оплаты голосами
 // NB: Логика такая: на кнопке "Поддержать разработчиков :)" будет висеть onClick(он в html встроен)
 // В onClick будет висеть callback функция из этого файла, которая инициирует оплату голосами
 
-export const initApp = () => (dispatch) => {
-    const VKConnectOldCallback = (e) => {
-        if (e.detail.type === 'VKWebAppUpdateConfig') {
-            VKConnectOld.unsubscribe(VKConnectOldCallback);
-
-            dispatch(setColorScheme(e.detail.data.scheme));
-        }
-    };
-
-    VKConnectOld.subscribe(VKConnectOldCallback);
-    VKConnect.send('VKWebAppInit', {});
+export const initApp = () => {
+    debugger;
+    connect.send('VKWebAppInit', {})
+        .then(res => console.log('kek', res) )
+        .catch(error => console.log('lol', error))
 };
 
-export const getCurrentUserId = () => (dispatch) => {
-    VKConnect.send("VKWebAppGetUserInfo", {}).then(data => {
-        dispatch(setCurrentUserId(data));
-    })
+export const getCurrentUserId = () => {
+    connect.send("VKWebAppGetUserInfo", {})
+        .then(res => console.log('kek', res) )
+        .catch(error => console.log('lol', error))
   }
 
 export const getAuthToken = (scope) => (dispatch) => {

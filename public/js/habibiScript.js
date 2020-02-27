@@ -1,4 +1,36 @@
-import * as VKconnect from './services/VK'
+// Импортируем логику для работы с VK
+import connect from './vk-connect/dist/index.es.js';
+import * as VK from './services/VK.js'
+
+// Инициализируем переменные
+let circleAppear, 
+    touchBlue, 
+    touchRed, 
+    levelPassed, 
+    levelLost, 
+    buttonTap, 
+    delayCount, 
+    timeAlmostUp, 
+    mp3Source, 
+    oggSource, 
+    mp3Link, 
+    oggLink, 
+    circle, 
+    gameSpcWidth, 
+    gmSpcHeight, 
+    tpblCircleWidth, 
+    tpblCircleHeight, 
+    evilCircles;
+
+// var current_user = VK.getCurrentUserId()
+function kek () {
+  console.log('export works', VK.APP_ID)
+  connect.sendPromise('VKWebAppInit', {})
+    .then(res => { console.log('kek', res) } )
+    .catch(error => { console.log('lol', error) })
+}
+
+kek()
 
 document.addEventListener('DOMContentLoaded', function() {
   // NB: Тут по сути будем производить все махинации с VK
@@ -131,7 +163,7 @@ var pagesArray = [
 ]
 
 // show/hide pages if the checkbox is checked
-togglePage = function(pageToggle, page) {
+let togglePage = function(pageToggle, page) {
   if (pageToggle.checked) {
     toolsBox.showPage(page);
   } else {
@@ -152,7 +184,7 @@ for (var i = 0; i < pagesTogglesArray.length; i++) {
 
 
 // ------------- GENERAL FUNCTIONS ------------- //
-toolsBox = {
+let toolsBox = {
   delay: function(fun, delayTime) {
     var delayAction = setTimeout(fun, delayTime);
   },
@@ -171,6 +203,7 @@ toolsBox = {
     toolsBox.delay(function() {
       toolsBox.showPage(pageGameMenu);
       toolsBox.hidePage(pageSplash);
+      kek()
     }, 1500); // Show after 1.5s because the fadeOut-animation takes 0.5s and has 1s delay
   },
   onClickNTouchstart: function(element, fun) { // add click and touchstart event listeners
@@ -487,7 +520,6 @@ var gameEngine = {
     gameEngine.reset();
   },
   gameLost: function() {
-    debugger;
     audioPool.playSound(levelLost);
     lvlLostScore.innerHTML = gameEngine.score;
     toolsBox.hidePage(pagePlayArea);
@@ -562,7 +594,7 @@ var gameEngine = {
 // ---------------- End of / Game Engine Object ---------------- //
 
 // -------------------- Levels Engine -------------------- //
-levelsEngine = {
+let levelsEngine = {
   levels : [
     {
       levelNum: 1,
@@ -663,6 +695,7 @@ document.ontouchmove = function(e) {
 // Tutorial Page Buttons
 // -- Start game Button
 toolsBox.onClickNTouchstart(tutPgStartGameBtn, function(){
+  console.log('init', init)
   audioPool.playSound(buttonTap);
   gameEngine.stop(); // Reset the levels and time
 

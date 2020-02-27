@@ -1,0 +1,90 @@
+{
+  "_from": "@vkontakte/vk-connect@^1.9.0",
+  "_id": "@vkontakte/vk-connect@1.9.0",
+  "_inBundle": false,
+  "_integrity": "sha512-IvsAJkNUThyQQr4I28Af0KfTX3xFKwYUGElUjIS1NW8BXBVIk0yuzQRp+jpud4097IdqGsnM847+gXgeueH7eg==",
+  "_location": "/@vkontakte/vk-connect",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "@vkontakte/vk-connect@^1.9.0",
+    "name": "@vkontakte/vk-connect",
+    "escapedName": "@vkontakte%2fvk-connect",
+    "scope": "@vkontakte",
+    "rawSpec": "^1.9.0",
+    "saveSpec": null,
+    "fetchSpec": "^1.9.0"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/@vkontakte/vk-connect/-/vk-connect-1.9.0.tgz",
+  "_shasum": "f7594e16859dc8713bf893d1966956806ca45f07",
+  "_spec": "@vkontakte/vk-connect@^1.9.0",
+  "_where": "/mnt/c/taptaptap",
+  "author": {
+    "name": "VK",
+    "url": "https://vk.com"
+  },
+  "browser": "dist/index.umd.js",
+  "bugs": {
+    "url": "https://github.com/VKCOM/vk-connect/issues"
+  },
+  "bundleDependencies": false,
+  "contributors": [
+    {
+      "name": "Tim Chaptykov",
+      "email": "tim.chaptykov@gmail.com",
+      "url": "https://vk.com/tc"
+    },
+    {
+      "name": "Gleb Vorontsov",
+      "email": "gleb.vorontsov@gmail.com",
+      "url": "https://vk.com/gleb.vorontsov"
+    },
+    {
+      "name": "Danakt Frost",
+      "url": "https://danakt.com"
+    }
+  ],
+  "deprecated": false,
+  "description": "Connects a VKUI application with VK client",
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@types/jest": "^25.1.3",
+    "jest": "^25.1.0",
+    "rimraf": "^3.0.0",
+    "rollup": "^1.21.4",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-bundle-size": "^1.0.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-json": "^4.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-typescript2": "^0.24.2",
+    "rollup-plugin-uglify": "^6.0.3",
+    "ts-jest": "^25.2.1",
+    "ts-node": "^8.4.1",
+    "typescript": "^3.6.3",
+    "yarn": "^1.22.0"
+  },
+  "homepage": "https://github.com/VKCOM/vk-connect#readme",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "name": "@vkontakte/vk-connect",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VKCOM/vk-connect.git"
+  },
+  "scripts": {
+    "build": "rimraf dist && NODE_ENV=production rollup -c",
+    "prepublishOnly": "npm run build",
+    "pretest": "yarn build",
+    "test": "jest",
+    "watch": "rollup -c -w"
+  },
+  "types": "dist/types/src/index.d.ts",
+  "umdName": "vkConnect",
+  "version": "1.9.0"
+}
